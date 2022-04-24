@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+##!/usr/bin/env make -f
+
+if [ $0 -eq 'off' ]; then
+    echo 'removing makeup'
+    make down
+fi
+
+getdns() {
+    networksetup -getdnsservers "$@"
+}
+setdns() {
+    networksetup -setdnsservers "$@"
+}
+
+saveIFS="$IFS" IFS=$'\n'
+wifiDNS=( $(getdns "Wi-Fi") )
+IFS="$saveIFS"
+
+#for i in "${wifiDNS[@]}"; do
+#    [[ ! $i =~ "*" || $1 =~ "W"  ]] && echo "$i"
+#done
+
+# localhost as dns
+setdns Wi-Fi 127.0.0.1 ${wifiDNS[@]}
+
+make up
+
+# restore dns
+setdns Wi-Fi ${wifiDNS[@]}
+
+# print current dns
+# networksetup -getdnsservers Wi-Fi
+

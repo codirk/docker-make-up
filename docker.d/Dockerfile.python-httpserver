@@ -1,0 +1,6 @@
+FROM python:3.8-slim-buster
+
+EXPOSE 9000
+
+CMD [ "python3", "-m" , "http.server", "9000" ]
+

@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  python-httpserver:
+    #image: hello-world
+    build:
+      context: ../docker.d
+      dockerfile: Dockerfile.python-httpserver
+    # image: nginx
+    ports:
+      - 9000:9000
+    networks:
+      - default
