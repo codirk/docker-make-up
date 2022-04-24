@@ -1,5 +1,5 @@
 # preface
-Make-up is not for women only :-)
+Make-up isn't just for women :-)
 
 # usage
 
