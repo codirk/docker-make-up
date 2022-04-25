@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 ##!/usr/bin/env make -f
 
-if [ $0 -eq 'off' ]; then
+if [[ $1 == 'off' ]]; then
     echo 'removing makeup'
     make down
+    exit -1
 fi
 
 getdns() {
