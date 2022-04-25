@@ -18,13 +18,13 @@ system.prune:
 	docker system prune -a
 
 docker.rm.volumes:
-	docker volume rm $(docker volume ls -q)
+	docker volume rm $(shell docker volume ls -q)
 
 docker.rm.container:
-	docker rm $(docker ps -a -q)
+	docker rm $(shell docker ps -a -q)
 
 docker.rm.images:
-	docker rmi $(docker images -q)
+	docker rmi $(shell docker images -q)
 
 
 .PHONY: up
