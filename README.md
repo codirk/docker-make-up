@@ -1,6 +1,11 @@
 # preface
 Make-up isn't just for women :-)
 
+# services
+* nginx server
+* dns server
+* simple http server
+
 # usage
 
 To start all docker container and change your DNS on your mac run
